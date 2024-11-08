@@ -1,19 +1,23 @@
-# /app
+# Usa una imagen base de Node.js
 FROM node:19.2-alpine3.16
 
-# cs app
+# Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
-#Dest /app
+# Copiar solo los archivos necesarios primero
 COPY package.json ./
 
-#Instalar dependencias
+# Instalar dependencias
 RUN npm install
 
-#Dest /app
-COPY app.js ./
+# Copiar el resto del código de la aplicación
+COPY . .
 
-# Comando run de la app
-CMD ["node", "app.js"]
+# Ejecutar pruebas
+RUN npm test
 
-# $ docker build -t cron-ticker .
+# Comando para ejecutar la aplicación
+# CMD ["node", "app.js"]
+
+# Comando para ejecutar la aplicación (sobrescribiendo cualquier script de entrada)
+ENTRYPOINT [ "node", "app.js" ]
