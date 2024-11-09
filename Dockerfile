@@ -1,4 +1,12 @@
 # Usa una imagen base de Node.js
+
+# BUILDX
+# docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 \
+#    -t klerith/cron-ticker:latest --push .
+
+# /app /usr /lib
+# FROM --platform=linux/amd64 node:19.2-alpine3.16
+# FROM --platform=$BUILDPLATFORM node:19.2-alpine3.16
 FROM node:19.2-alpine3.16
 
 # Establecer el directorio de trabajo en el contenedor
