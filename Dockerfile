@@ -33,3 +33,8 @@ COPY tasks/ ./tasks
 
 # Comando para ejecutar la aplicación
 CMD ["node", "app.js"]
+
+# Correr desde la terminal
+# docker build -t <usuario>/<nombre-imagen>:<versión>
+# EJ: docker build -t yaniconjota/cron-ticker:wet-buffalo .
+# --> docker container run yaniconjota/cron-ticker:wet-buffalo
