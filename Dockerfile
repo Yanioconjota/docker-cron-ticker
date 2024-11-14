@@ -1,7 +1,7 @@
 # Usa una imagen base de Node.js
 
 # BUILDX
-# docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 \
+# docker buildx build --platform linux/amd64,linux/arm64
 #    -t klerith/cron-ticker:latest --push .
 
 # /app /usr /lib
