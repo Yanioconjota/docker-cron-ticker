@@ -31,7 +31,4 @@ RUN rm -rf tests && rm -rf node_modules
 RUN npm install --prod
 
 # Comando para ejecutar la aplicación
-# CMD ["node", "app.js"]
-
-# Comando para ejecutar la aplicación (sobrescribiendo cualquier script de entrada)
-ENTRYPOINT [ "node", "app.js" ]
+CMD ["node", "app.js"]
